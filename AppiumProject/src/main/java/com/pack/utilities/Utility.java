@@ -39,8 +39,8 @@ public class Utility {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		// Set android deviceName desired capability. Set your device name.
 		// capabilities.setCapability("deviceName", "emulator-5554");
-		// capabilities.setCapability("deviceName",
-		// prop.getProperty("devicename"));
+//		 capabilities.setCapability("deviceName",
+//		 prop.getProperty("devicename"));
 		capabilities.setCapability("deviceName", System.getenv("DEVICENAME"));
 
 		// Set BROWSER_NAME desired capability. It's Android in our case here.
@@ -48,8 +48,8 @@ public class Utility {
 		// Set android VERSION desired capability. Set your mobile device's OS
 		// version.
 		// capabilities.setCapability(CapabilityType.VERSION, "5.1");
-		// capabilities.setCapability(CapabilityType.VERSION,
-		// prop.getProperty("version"));
+//		 capabilities.setCapability(CapabilityType.VERSION,
+//		 prop.getProperty("version"));
 		capabilities.setCapability(CapabilityType.VERSION,
 				System.getenv("VERSION"));
 		// Set android platformName desired capability. It's Android in our case
@@ -75,7 +75,7 @@ public class Utility {
 		// capabilities);
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),
 				capabilities);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 	}
 
