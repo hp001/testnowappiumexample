@@ -36,13 +36,19 @@ public class ShowTimesPage extends Utility{
 	
 	public static Boolean selectShowTime(){
 		List<WebElement> timeElements = driver.findElements(timeId);
-		List<WebElement> timeModeElements = driver.findElements(timeModeId);
-		for(int i=0; i<timeElements.size(); i++){
-			if(timeElements.get(i).getText().equalsIgnoreCase(TIME) && timeModeElements.get(i).getText().equalsIgnoreCase(TIMEMODE)){
-				isShowTimeAvailable = true;
-				clickOnElement(timeElements.get(i));
-				break;
-			}
+//		List<WebElement> timeModeElements = driver.findElements(timeModeId);
+//		for(int i=0; i<timeElements.size(); i++){
+//			if(timeElements.get(i).getText().equalsIgnoreCase(TIME) && timeModeElements.get(i).getText().equalsIgnoreCase(TIMEMODE)){
+//				isShowTimeAvailable = true;
+//				clickOnElement(timeElements.get(i));
+//				break;
+//			}
+//		}
+		
+		if(timeElements.size()>0){
+			clickOnElement(timeElements.get(0));
+			System.out.println("Show Time Available");
+			isShowTimeAvailable = true;
 		}
 		
 		if(!isShowTimeAvailable){
@@ -55,8 +61,17 @@ public class ShowTimesPage extends Utility{
 	public static Boolean selectSeatCategory(){
 		List<WebElement> categoryElements = driver.findElements(categoryId);
 		List<WebElement> categoryStatusElements = driver.findElements(categoryStatusId);
-		for(int i=0; i<categoryElements.size(); i++){
-			if(categoryElements.get(i).getText().equalsIgnoreCase(SEATCATEGORY) && categoryStatusElements.get(i).getText().equalsIgnoreCase("available")){
+//		for(int i=0; i<categoryElements.size(); i++){
+//			if(categoryElements.get(i).getText().equalsIgnoreCase(SEATCATEGORY) && categoryStatusElements.get(i).getText().equalsIgnoreCase("available")){
+//				isSeatCatAvailable = true;
+//				clickOnElement(categoryElements.get(i));
+//				waitForElement(HowManyTicketsPage.titleId);
+//				break;
+//			}
+//		}
+		
+		for(int i=0; i<categoryStatusElements.size(); i++){
+			if(categoryStatusElements.get(i).getText().equalsIgnoreCase("available")){
 				isSeatCatAvailable = true;
 				clickOnElement(categoryElements.get(i));
 				waitForElement(HowManyTicketsPage.titleId);

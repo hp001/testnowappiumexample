@@ -21,16 +21,23 @@ public class MoviesPage extends Utility{
 		assertEquals(driver.findElement(searchTbId).getText(), "Search for Movie, Language, Actor");
 	}
 	
+//	For user specific search
 	public static Boolean searchForMovie(){
-		clickOnElement(searchTbId);
-		sendKeys(searchTbId, MOVIENAME);
+//		clickOnElement(searchTbId);
+//		sendKeys(searchTbId, MOVIENAME);
 		List<WebElement> elements = driver.findElements(eventTitleId);
-		for(WebElement element : elements){
-			if(element.getText().equalsIgnoreCase(MOVIENAME)){
-				isMovieFound = true;
-				clickOnElement(element);
-				break;
-			}
+//		for(WebElement element : elements){
+//			if(element.getText().equalsIgnoreCase(MOVIENAME)){
+//				isMovieFound = true;
+//				clickOnElement(element);
+//				break;
+//			}
+//		}
+		
+		if(elements.size()>0){
+			clickOnElement(elements.get(0));
+			System.out.println("Movie found.");
+			isMovieFound = true;
 		}
 		
 		if(!isMovieFound){

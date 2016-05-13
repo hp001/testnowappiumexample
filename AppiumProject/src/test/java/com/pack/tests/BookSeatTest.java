@@ -28,12 +28,12 @@ public class BookSeatTest extends Utility {
 		if (MoviesPage.searchForMovie()) {
 			MovieDetailsPage.verifyMovieDetailsPage();
 			MovieDetailsPage.clickBookBtn();
-			PickVenuePage.verifyPickVenuePage();
+//			PickVenuePage.verifyPickVenuePage();
 			if (PickVenuePage.searchForVenue()) {
-				ShowTimesPage.verifyShowTimesPage();
+//				ShowTimesPage.verifyShowTimesPage();
 				if (ShowTimesPage.selectShowTime()) {
 					if (ShowTimesPage.selectSeatCategory()) {
-						HowManyTicketsPage.verifyHowManyTicketsPage();
+//						HowManyTicketsPage.verifyHowManyTicketsPage();
 						if (HowManyTicketsPage.selectSeatsQuantity()) {
 							PickSeatsPage.verifyPickSeatsPage();
 							PickSeatsPage.selectSeats();

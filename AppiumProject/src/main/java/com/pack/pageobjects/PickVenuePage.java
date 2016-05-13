@@ -31,18 +31,24 @@ public class PickVenuePage extends Utility{
 	}
 	
 	public static Boolean searchForVenue() throws InterruptedException{
-		selectDateForMovie();
-		clickOnElement(searchIconId);
-		sendKeys(searchTbId, VENUENAME);
-		Thread.sleep(3000);
+//		selectDateForMovie();
+//		clickOnElement(searchIconId);
+//		sendKeys(searchTbId, VENUENAME);
+//		Thread.sleep(3000);
 		List<WebElement> elements = driver.findElements(venueNameId);
-		for(WebElement element : elements){
-			if(element.getText().equalsIgnoreCase(VENUENAME)){
-				isVenueFound = true;
-				clickOnElement(element);
-				waitForElement(ShowTimesPage.titleId);
-				break;
-			}
+//		for(WebElement element : elements){
+//			if(element.getText().equalsIgnoreCase(VENUENAME)){
+//				isVenueFound = true;
+//				clickOnElement(element);
+//				waitForElement(ShowTimesPage.titleId);
+//				break;
+//			}
+//		}
+		
+		if(elements.size()>0){
+			clickOnElement(elements.get(0));
+			System.out.println("Venue Found.");
+			isVenueFound = true;
 		}
 		
 		if(!isVenueFound){

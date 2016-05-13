@@ -52,6 +52,7 @@ public class LoginPage extends Utility {
 				handleRegionPage();
 			}
 		} catch (NoSuchElementException e) {
+			System.out.println("No pop up found");
 		}
 		waitForElement(MainTabPage.showcaseTabXpath);
 	}
