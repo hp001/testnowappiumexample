@@ -75,4 +75,5 @@ Reports are created inside the test-output directory with above mentioned filena
 * Email: __ganesh.ransarje@opexsoftware.com__
 
 ##Licence :eyes:
-For Licence information, see [here](https://github.com/opexsw/testnowappiumexample/blob/master/LICENSE.txt)
+For Licence information, see [here](https://github.com/opexsw/testnowappiumexample/blob/master/LICENSE)
+
