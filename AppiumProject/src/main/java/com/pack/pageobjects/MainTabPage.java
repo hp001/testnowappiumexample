@@ -15,12 +15,15 @@ public class MainTabPage extends Utility {
 			.xpath("//android.widget.TextView[@text='YOU']");
 	private final static By discoverTabXpath = By
 			.xpath("//android.widget.TextView[@text='DISCOVER']");
-
-	public static void verifyMainTabs() {
+//	private final static By adsDialogeCloseBtnId = By
+//			.id("com.bt.bms:id/iBtnCloseDialog");
+	
+	public static void verifyMainTabs(String str) {
 		assertEquals(driver.findElement(showcaseTabXpath).getText(), "SHOWCASE");
 		assertEquals(driver.findElement(ticketsTabXpath).getText(), "TICKETS");
 		assertEquals(driver.findElement(youTabXpath).getText(), "YOU");
 		assertEquals(driver.findElement(discoverTabXpath).getText(), "DISCOVER");
+		takeScreenShot(str);
 	}
 
 	public static void clickTicketsTab() {

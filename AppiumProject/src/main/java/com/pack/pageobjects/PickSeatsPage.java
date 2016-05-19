@@ -27,7 +27,8 @@ public class PickSeatsPage extends Utility {
 	private static final int NOOFSEATS = Integer.parseInt(prop.getProperty("seatquantity"));
 	private static final int STARTINGSEATNO = Integer.parseInt(prop.getProperty("seatnostartfrom"));
 	
-	public static void verifyPickSeatsPage() {
+	public static void verifyPickSeatsPage(String str) {
+		takeScreenShot(str);
 		assertEquals(driver.findElement(titleId).getText(), "PICK "+ HowManyTicketsPage.SEATQUANTITY +" SEATS");
 		assertEquals(driver.findElement(availableTextId).getText(), "Available");
 		assertEquals(driver.findElement(yourSelectionTextId).getText(),
@@ -37,7 +38,7 @@ public class PickSeatsPage extends Utility {
 		assertEquals(driver.findElement(payNowBtnId).getText(), "Pay Now");
 	}
 
-	public static void selectSeats() {
+	public static void selectSeats(String str) {
 		getCodeIndex();
 		try {
 			for (int i = STARTINGSEATNO; i < STARTINGSEATNO + NOOFSEATS; i++) {
@@ -55,6 +56,7 @@ public class PickSeatsPage extends Utility {
 		if (isSeatsAvailable) {
 			clickOnElement(element);
 			System.out.println("Seats Available and selected");
+			takeScreenShot(str);
 		}
 	}
 

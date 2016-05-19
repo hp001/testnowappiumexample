@@ -8,10 +8,16 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.CapabilityType;
@@ -31,6 +37,8 @@ public class Utility {
 	private static final File appDir = new File(classpathRoot,
 			"src/test/resources/apps");
 	private static final File app = new File(appDir, "BookMyShow-4.3.2.apk");
+	private static final String destDir = "screenshots";
+	private static DateFormat dateFormat;
 
 	@BeforeClass
 	public static void setUp() throws MalformedURLException {
@@ -40,16 +48,16 @@ public class Utility {
 		// Created object of DesiredCapabilities class.
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		// Set android deviceName desired capability. Set your device name.
-//		capabilities.setCapability("deviceName",
-//		 prop.getProperty("devicename"));
+		// capabilities.setCapability("deviceName",
+		// prop.getProperty("devicename"));
 		capabilities.setCapability("deviceName", System.getenv("DEVICENAME"));
 
 		// Set BROWSER_NAME desired capability. It's Android in our case here.
 		// capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
 		// Set android VERSION desired capability. Set your mobile device's OS
 		// version.
-//		 capabilities.setCapability(CapabilityType.VERSION,
-//		 prop.getProperty("version"));
+		// capabilities.setCapability(CapabilityType.VERSION,
+		// prop.getProperty("version"));
 		capabilities.setCapability(CapabilityType.VERSION,
 				System.getenv("VERSION"));
 		// Set android platformName desired capability. It's Android in our case
@@ -77,6 +85,9 @@ public class Utility {
 				capabilities);
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 
+		// Create folder under project with name "screenshots" provided to
+		// destDir.
+		new File(destDir).mkdirs();
 	}
 
 	@AfterClass
@@ -120,4 +131,25 @@ public class Utility {
 			e.printStackTrace();
 		}
 	}
+
+	public static void takeScreenShot(String filename) {
+		// Set folder name to store screenshots.
+		// Capture screenshot.
+		File scrFile = ((TakesScreenshot) driver)
+				.getScreenshotAs(OutputType.FILE);
+		// Set date format to set It as screenshot file name.
+		dateFormat = new SimpleDateFormat("dd-MMM-yyyy__hh_mm_ssaa");
+
+		// Set file name using current date time.
+		// String destFile = dateFormat.format(new Date()) + ".png";
+		String time = dateFormat.format(new Date());
+		String destFile = filename + time + ".png";
+		try {
+			// Copy paste file at destination folder location
+			FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

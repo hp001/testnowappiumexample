@@ -40,7 +40,9 @@ public class ShowTimesPage extends Utility {
 				PickVenuePage.MONTH.toUpperCase());
 	}
 
-	public static Boolean selectShowTime() {
+	public static Boolean selectShowTime(String str) throws InterruptedException {
+		Thread.sleep(1000);
+		takeScreenShot(str);
 		List<WebElement> timeElements = driver.findElements(timeId);
 		// List<WebElement> timeModeElements = driver.findElements(timeModeId);
 		// for(int i=0; i<timeElements.size(); i++){
@@ -73,7 +75,8 @@ public class ShowTimesPage extends Utility {
 			return true;
 	}
 
-	public static Boolean selectSeatCategory() {
+	public static Boolean selectSeatCategory(String str) {
+		takeScreenShot(str);
 		List<WebElement> categoryElements = driver.findElements(categoryId);
 		List<WebElement> categoryStatusElements = driver
 				.findElements(categoryStatusId);

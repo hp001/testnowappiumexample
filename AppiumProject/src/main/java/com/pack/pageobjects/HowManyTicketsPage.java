@@ -36,7 +36,8 @@ public class HowManyTicketsPage extends Utility{
 		assertEquals(driver.findElement(headerId).getText(), "HOW MANY TICKETS?");
 	}
 	
-	public static Boolean selectSeatsQuantity(){
+	public static Boolean selectSeatsQuantity(String str){
+		takeScreenShot(str);
 		List<WebElement> elements = driver.findElements(quantityId);
 		for(WebElement element : elements){
 			if(element.getText().equalsIgnoreCase(SEATQUANTITY)){

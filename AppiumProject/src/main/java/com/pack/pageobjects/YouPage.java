@@ -43,7 +43,7 @@ public class YouPage extends Utility {
 		waitForElement(LoginPage.titleTextId);
 	}
 
-	public static void verifyYouPageAfetrLogin() {
+	public static void verifyYouPageAfetrLogin(String str) {
 		assertEquals(driver.findElement(userNameTextId).getText(),
 				FIRSTNAME.toUpperCase()+" "+ LASTNAME.toUpperCase());
 		assertEquals(driver.findElement(myWalletTextId).getText(),
@@ -52,14 +52,15 @@ public class YouPage extends Utility {
 				"ReferMyFriend new");
 		assertEquals(driver.findElement(favVenueTextId).getText(),
 				"Favorite Venues");
+		takeScreenShot(str);
 	}
 
-	public static void logout() {
+	public static void logout(String str) {
 		clickOnElement(settingsBtnId);
 		waitForElement(SettingsPage.titleTextId);
 		SettingsPage.clickLogoutText();
 		waitForElement(LogoutPopupPage.titleTextId);
-		LogoutPopupPage.verifyLogoutPopup();
+		LogoutPopupPage.verifyLogoutPopup(str);
 		LogoutPopupPage.clickYesBtn();
 		waitForElement(saveYourCreditCardsTextId);
 	}

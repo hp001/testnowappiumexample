@@ -12,12 +12,13 @@ public class LogoutPopupPage extends Utility {
 	private final static By noBtnId = By.id("com.bt.bms:id/no_bt");
 	private final static By yesBtnId = By.id("com.bt.bms:id/yes_bt");
 
-	public static void verifyLogoutPopup() {
+	public static void verifyLogoutPopup(String str) {
 		assertEquals(driver.findElement(titleTextId).getText(), "Logout");
 		assertEquals(driver.findElement(messageTextId).getText(),
 				"Are you sure you want to logout?");
 		assertEquals(driver.findElement(noBtnId).getText(), "No");
 		assertEquals(driver.findElement(yesBtnId).getText(), "Yes");
+		takeScreenShot(str);
 	}
 
 	public static void clickYesBtn() {

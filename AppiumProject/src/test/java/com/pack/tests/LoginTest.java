@@ -11,12 +11,12 @@ import com.pack.utilities.Utility;
 public class LoginTest extends Utility {
 	@Test
 	public void testLoginLogout() {
-		HomePage.verifyHomePage();
+		HomePage.verifyHomePage("LoginTest");
 		HomePage.clickLoginBtn();
-		LoginPage.verifyLoginPage();
-		LoginPage.loginWithValidCredential();
+		LoginPage.verifyLoginPage("LoginTest");
+		LoginPage.loginWithValidCredential("LoginTest");
 		MainTabPage.clickYouTabAfterLogin();
-		YouPage.verifyYouPageAfetrLogin();
-		YouPage.logout();
+		YouPage.verifyYouPageAfetrLogin("LoginTest");
+		YouPage.logout("LoginTest");
 	}
 }

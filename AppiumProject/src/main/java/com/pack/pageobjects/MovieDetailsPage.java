@@ -16,7 +16,7 @@ public class MovieDetailsPage extends Utility {
 	private static final By languageTextId = By.id("com.bt.bms:id/language");
 	private static final By castTextId = By.id("com.bt.bms:id/cast");
 	
-	public static void verifyMovieDetailsPage() {
+	public static void verifyMovieDetailsPage(String str) {
 		assertEquals(driver.findElement(bookBtnId).getText(), "BOOK");
 		assertEquals(driver.findElement(releaseDateTextId).getText(),
 				"RELEASE DATE");
@@ -25,6 +25,7 @@ public class MovieDetailsPage extends Utility {
 		assertEquals(driver.findElement(genreTextId).getText(), "GENRE");
 		assertEquals(driver.findElement(languageTextId).getText(), "LANGUAGE");
 		assertEquals(driver.findElement(castTextId).getText(), "CAST");
+		takeScreenShot(str);
 	}
 
 	public static void clickBookBtn() {

@@ -16,9 +16,10 @@ public class MoviesPage extends Utility{
 	private static boolean isMovieFound = false;
 	public static final String MOVIENAME = prop.getProperty("moviename");
 	
-	public static void verifyMoviesPage(){
+	public static void verifyMoviesPage(String str){
 		assertEquals(driver.findElement(moviesTitleId).getText(), "MOVIES");
 		assertEquals(driver.findElement(searchTbId).getText(), "Search for Movie, Language, Actor");
+		takeScreenShot(str);
 	}
 	
 //	For user specific search

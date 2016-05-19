@@ -12,12 +12,13 @@ public class PickRegionPage extends Utility {
 	private static final By searchTbId = By.id("com.bt.bms:id/edtSearchBox");
 	public static final String REGION = prop.getProperty("region");
 	
-	public static void veerifyPickRegionPage() {
+	public static void veerifyPickRegionPage(String str) {
 		assertEquals(driver.findElement(pickRegionTitleId).getText(),
 				"PICK A REGION");
 		driver.findElement(searchIconId).click();
 		assertEquals(driver.findElement(searchTbId).getText(),
 				"Search for your city");
+		takeScreenShot(str);
 	}
 
 	public static void selectRegion() {

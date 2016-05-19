@@ -30,11 +30,12 @@ public class PickVenuePage extends Utility{
 		clickOnElement(cancelSearchBtnId);
 	}
 	
-	public static Boolean searchForVenue() throws InterruptedException{
+	public static Boolean searchForVenue(String str) throws InterruptedException{
 //		selectDateForMovie();
 //		clickOnElement(searchIconId);
 //		sendKeys(searchTbId, VENUENAME);
 //		Thread.sleep(3000);
+		takeScreenShot(str);
 		List<WebElement> elements = driver.findElements(venueNameId);
 //		for(WebElement element : elements){
 //			if(element.getText().equalsIgnoreCase(VENUENAME)){

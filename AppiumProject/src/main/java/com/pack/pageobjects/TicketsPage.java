@@ -20,7 +20,7 @@ public class TicketsPage extends Utility{
 	private final static By locationTextId = By.id("com.bt.bms:id/txvLocation");
 	private static List<WebElement> elements;
 	
-	public static void verifyTicketsPage() throws InterruptedException{
+	public static void verifyTicketsPage(String str) throws InterruptedException{
 //		Thread.sleep(2000);
 //		System.out.println(driver.getClass());
 //		System.out.println(driver.getTitle());
@@ -41,6 +41,7 @@ public class TicketsPage extends Utility{
 		assertEquals(elements.get(11).getText(), "EXPERIENCES");
 		assertEquals(driver.findElement(searchByVenueTextXpath).getText(), "Search by Venue");
 		assertTrue(driver.findElement(locationTextId).isDisplayed());
+		takeScreenShot(str);
 	}
 	
 	public static void clickMoviesMenu(){

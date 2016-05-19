@@ -16,27 +16,27 @@ import com.pack.utilities.Utility;
 public class BookSeatTest extends Utility {
 	@Test
 	public void testBookSeat() throws InterruptedException {
-		HomePage.verifyHomePage();
-		HomePage.clickIwillSkipBtn();
-		MainTabPage.verifyMainTabs();
+		HomePage.verifyHomePage("BookSeatTest");
+		HomePage.clickIwillSkipBtn("BookSeatTest");
+		MainTabPage.verifyMainTabs("BookSeatTest");
 		MainTabPage.clickYouTab();
 		MainTabPage.clickTicketsTab();
-		TicketsPage.verifyTicketsPage();
+		TicketsPage.verifyTicketsPage("BookSeatTest");
 		TicketsPage.verifyLocation();
 		TicketsPage.clickMoviesMenu();
-		MoviesPage.verifyMoviesPage();
+		MoviesPage.verifyMoviesPage("BookSeatTest");
 		if (MoviesPage.searchForMovie()) {
-			MovieDetailsPage.verifyMovieDetailsPage();
+			MovieDetailsPage.verifyMovieDetailsPage("BookSeatTest");
 			MovieDetailsPage.clickBookBtn();
 //			PickVenuePage.verifyPickVenuePage();
-			if (PickVenuePage.searchForVenue()) {
+			if (PickVenuePage.searchForVenue("BookSeatTest")) {
 //				ShowTimesPage.verifyShowTimesPage();
-				if (ShowTimesPage.selectShowTime()) {
-					if (ShowTimesPage.selectSeatCategory()) {
+				if (ShowTimesPage.selectShowTime("BookSeatTest")) {
+					if (ShowTimesPage.selectSeatCategory("BookSeatTest")) {
 //						HowManyTicketsPage.verifyHowManyTicketsPage();
-						if (HowManyTicketsPage.selectSeatsQuantity()) {
-							PickSeatsPage.verifyPickSeatsPage();
-							PickSeatsPage.selectSeats();
+						if (HowManyTicketsPage.selectSeatsQuantity("BookSeatTest")) {
+							PickSeatsPage.verifyPickSeatsPage("BookSeatTest");
+							PickSeatsPage.selectSeats("BookSeatTest");
 						}
 					}
 				}

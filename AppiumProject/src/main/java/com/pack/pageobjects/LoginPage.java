@@ -24,7 +24,7 @@ public class LoginPage extends Utility {
 	private static final String USERNAME = prop.getProperty("username");
 	private static final String PASSWORD = prop.getProperty("password");
 
-	public static void verifyLoginPage() {
+	public static void verifyLoginPage(String str) {
 		assertEquals(driver.findElement(titleTextId).getText(), "LOGIN");
 		assertEquals(driver.findElement(whyTextId).getText(), "why?");
 		assertEquals(driver.findElement(loginWithFacebookTextId).getText(),
@@ -36,6 +36,7 @@ public class LoginPage extends Utility {
 				"Email Address");
 		assertEquals(driver.findElement(forgotPasswordLinkId).getText(),
 				"Forgot password?");
+		takeScreenShot(str);
 	}
 
 	public static void clickSignUpLink() {
@@ -43,13 +44,13 @@ public class LoginPage extends Utility {
 		waitForElement(SignUpPage.titleTextId);
 	}
 
-	public static void loginWithValidCredential() {
+	public static void loginWithValidCredential(String str) {
 		sendKeys(emailAddressTbId, USERNAME);
 		sendKeys(passwordTbId, PASSWORD);
 		clickOnElement(signInBtnId);
 		try {
 			if (UnableToIdentifyLocationPopup.getIsPopupVisible()) {
-				handleRegionPage();
+				handleRegionPage(str);
 			}
 		} catch (NoSuchElementException e) {
 			System.out.println("No pop up found");
@@ -57,10 +58,10 @@ public class LoginPage extends Utility {
 		waitForElement(MainTabPage.showcaseTabXpath);
 	}
 	
-	public static void handleRegionPage(){
+	public static void handleRegionPage(String str){
 		UnableToIdentifyLocationPopup.verifyPopupElements();
 		UnableToIdentifyLocationPopup.clickDismissBtn();
-		PickRegionPage.veerifyPickRegionPage();
+		PickRegionPage.veerifyPickRegionPage(str);
 		PickRegionPage.selectRegion();
 	}
 }
