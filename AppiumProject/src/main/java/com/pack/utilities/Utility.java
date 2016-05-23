@@ -24,6 +24,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -37,8 +38,11 @@ public class Utility {
 	private static final File appDir = new File(classpathRoot,
 			"src/test/resources/apps");
 	private static final File app = new File(appDir, "BookMyShow-4.3.2.apk");
-	private static final String destDir = "screenshots";
+	public static final String destDir = "target/Screenshots";
 	private static DateFormat dateFormat;
+	public static String destFile;
+	public static String imagePath;
+	public static String screenShotBase64;
 
 	@BeforeClass
 	public static void setUp() throws MalformedURLException {
@@ -88,6 +92,7 @@ public class Utility {
 		// Create folder under project with name "screenshots" provided to
 		// destDir.
 		new File(destDir).mkdirs();
+		new File("Report").mkdirs();
 	}
 
 	@AfterClass
@@ -143,7 +148,8 @@ public class Utility {
 		// Set file name using current date time.
 		// String destFile = dateFormat.format(new Date()) + ".png";
 		String time = dateFormat.format(new Date());
-		String destFile = filename + time + ".png";
+		destFile = filename + time + ".jpg";
+		imagePath = "Screenshots" + "/" + destFile;
 		try {
 			// Copy paste file at destination folder location
 			FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
@@ -152,4 +158,8 @@ public class Utility {
 		}
 	}
 
+	public static void addScreenshottoReport(String linkName) {
+		Reporter.log("<a href= '../" + imagePath + "'<img src='../" + imagePath
+				+ "' hight='100' width='100'/>" + linkName + " </a>");
+	}
 }

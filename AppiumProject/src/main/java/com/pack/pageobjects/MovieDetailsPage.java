@@ -26,6 +26,7 @@ public class MovieDetailsPage extends Utility {
 		assertEquals(driver.findElement(languageTextId).getText(), "LANGUAGE");
 		assertEquals(driver.findElement(castTextId).getText(), "CAST");
 		takeScreenShot(str);
+		addScreenshottoReport("MovieDetailsPage");
 	}
 
 	public static void clickBookBtn() {

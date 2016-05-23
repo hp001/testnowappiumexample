@@ -43,6 +43,7 @@ public class ShowTimesPage extends Utility {
 	public static Boolean selectShowTime(String str) throws InterruptedException {
 		Thread.sleep(1000);
 		takeScreenShot(str);
+		addScreenshottoReport("ShowTimePage");
 		List<WebElement> timeElements = driver.findElements(timeId);
 		// List<WebElement> timeModeElements = driver.findElements(timeModeId);
 		// for(int i=0; i<timeElements.size(); i++){
@@ -77,6 +78,7 @@ public class ShowTimesPage extends Utility {
 
 	public static Boolean selectSeatCategory(String str) {
 		takeScreenShot(str);
+		addScreenshottoReport("SeatCategoryPage");
 		List<WebElement> categoryElements = driver.findElements(categoryId);
 		List<WebElement> categoryStatusElements = driver
 				.findElements(categoryStatusId);

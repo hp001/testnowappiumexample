@@ -20,6 +20,7 @@ public class MoviesPage extends Utility{
 		assertEquals(driver.findElement(moviesTitleId).getText(), "MOVIES");
 		assertEquals(driver.findElement(searchTbId).getText(), "Search for Movie, Language, Actor");
 		takeScreenShot(str);
+		addScreenshottoReport("MoviePage");
 	}
 	
 //	For user specific search

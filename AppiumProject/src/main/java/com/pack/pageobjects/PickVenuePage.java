@@ -36,6 +36,7 @@ public class PickVenuePage extends Utility{
 //		sendKeys(searchTbId, VENUENAME);
 //		Thread.sleep(3000);
 		takeScreenShot(str);
+		addScreenshottoReport("VenuePage");
 		List<WebElement> elements = driver.findElements(venueNameId);
 //		for(WebElement element : elements){
 //			if(element.getText().equalsIgnoreCase(VENUENAME)){

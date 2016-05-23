@@ -10,7 +10,7 @@ import com.pack.utilities.Utility;
 
 public class LoginTest extends Utility {
 	@Test
-	public void testLoginLogout() {
+	public void testLoginLogout() throws InterruptedException {
 		HomePage.verifyHomePage("LoginTest");
 		HomePage.clickLoginBtn();
 		LoginPage.verifyLoginPage("LoginTest");

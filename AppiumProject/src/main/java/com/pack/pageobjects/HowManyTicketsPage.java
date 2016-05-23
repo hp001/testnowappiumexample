@@ -38,6 +38,7 @@ public class HowManyTicketsPage extends Utility{
 	
 	public static Boolean selectSeatsQuantity(String str){
 		takeScreenShot(str);
+		addScreenshottoReport("HowManyTicketsPage");
 		List<WebElement> elements = driver.findElements(quantityId);
 		for(WebElement element : elements){
 			if(element.getText().equalsIgnoreCase(SEATQUANTITY)){

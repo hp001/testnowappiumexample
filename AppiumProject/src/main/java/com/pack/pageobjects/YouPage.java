@@ -53,6 +53,7 @@ public class YouPage extends Utility {
 		assertEquals(driver.findElement(favVenueTextId).getText(),
 				"Favorite Venues");
 		takeScreenShot(str);
+		addScreenshottoReport("YouPage");
 	}
 
 	public static void logout(String str) {

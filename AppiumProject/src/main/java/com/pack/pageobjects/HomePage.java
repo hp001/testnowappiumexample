@@ -16,6 +16,7 @@ public class HomePage extends Utility {
 		assertEquals(driver.findElement(loginBtnId).getText(), "Login");
 		assertEquals(driver.findElement(iWillSkipBtnId).getText(), "I'LL SKIP");
 		takeScreenShot(str);
+		addScreenshottoReport("HomePage");
 	}
 
 	public static void clickIwillSkipBtn(String str) {

@@ -37,6 +37,7 @@ public class LoginPage extends Utility {
 		assertEquals(driver.findElement(forgotPasswordLinkId).getText(),
 				"Forgot password?");
 		takeScreenShot(str);
+		addScreenshottoReport("LoginPage");
 	}
 
 	public static void clickSignUpLink() {

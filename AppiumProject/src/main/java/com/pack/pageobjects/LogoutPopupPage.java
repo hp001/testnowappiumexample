@@ -19,6 +19,7 @@ public class LogoutPopupPage extends Utility {
 		assertEquals(driver.findElement(noBtnId).getText(), "No");
 		assertEquals(driver.findElement(yesBtnId).getText(), "Yes");
 		takeScreenShot(str);
+		addScreenshottoReport("LogoutConfirmationPopup");
 	}
 
 	public static void clickYesBtn() {

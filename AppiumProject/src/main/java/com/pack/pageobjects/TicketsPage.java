@@ -42,6 +42,7 @@ public class TicketsPage extends Utility{
 		assertEquals(driver.findElement(searchByVenueTextXpath).getText(), "Search by Venue");
 		assertTrue(driver.findElement(locationTextId).isDisplayed());
 		takeScreenShot(str);
+		addScreenshottoReport("TicketPage");
 	}
 	
 	public static void clickMoviesMenu(){

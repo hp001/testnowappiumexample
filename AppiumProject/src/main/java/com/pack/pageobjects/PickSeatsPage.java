@@ -29,6 +29,7 @@ public class PickSeatsPage extends Utility {
 	
 	public static void verifyPickSeatsPage(String str) {
 		takeScreenShot(str);
+		addScreenshottoReport("PickSeatPage");
 		assertEquals(driver.findElement(titleId).getText(), "PICK "+ HowManyTicketsPage.SEATQUANTITY +" SEATS");
 		assertEquals(driver.findElement(availableTextId).getText(), "Available");
 		assertEquals(driver.findElement(yourSelectionTextId).getText(),

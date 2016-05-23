@@ -24,6 +24,7 @@ public class MainTabPage extends Utility {
 		assertEquals(driver.findElement(youTabXpath).getText(), "YOU");
 		assertEquals(driver.findElement(discoverTabXpath).getText(), "DISCOVER");
 		takeScreenShot(str);
+		addScreenshottoReport("DashboardPage");
 	}
 
 	public static void clickTicketsTab() {
