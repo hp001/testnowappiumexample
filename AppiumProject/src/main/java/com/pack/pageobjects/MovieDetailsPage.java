@@ -24,7 +24,7 @@ public class MovieDetailsPage extends Utility {
 		assertEquals(driver.findElement(directorTextId).getText(), "DIRECTOR");
 		assertEquals(driver.findElement(genreTextId).getText(), "GENRE");
 		assertEquals(driver.findElement(languageTextId).getText(), "LANGUAGE");
-		assertEquals(driver.findElement(castTextId).getText(), "CAST");
+//		assertEquals(driver.findElement(castTextId).getText(), "CAST");
 		takeScreenShot(str);
 		addScreenshottoReport("MovieDetailsPage");
 	}

@@ -91,8 +91,8 @@ public class Utility {
 
 		// Create folder under project with name "screenshots" provided to
 		// destDir.
-		new File(destDir).mkdirs();
-		new File("Report").mkdirs();
+//		new File(destDir).mkdirs();
+//		new File("Report").mkdirs();
 	}
 
 	@AfterClass
@@ -140,26 +140,29 @@ public class Utility {
 	public static void takeScreenShot(String filename) {
 		// Set folder name to store screenshots.
 		// Capture screenshot.
-		File scrFile = ((TakesScreenshot) driver)
-				.getScreenshotAs(OutputType.FILE);
+//		File scrFile = ((TakesScreenshot) driver)
+//				.getScreenshotAs(OutputType.FILE);
 		// Set date format to set It as screenshot file name.
-		dateFormat = new SimpleDateFormat("dd-MMM-yyyy__hh_mm_ssaa");
-
+//		dateFormat = new SimpleDateFormat("dd-MMM-yyyy__hh_mm_ssaa");
+		screenShotBase64 = ((TakesScreenshot) driver)
+		.getScreenshotAs(OutputType.BASE64);
 		// Set file name using current date time.
 		// String destFile = dateFormat.format(new Date()) + ".png";
-		String time = dateFormat.format(new Date());
-		destFile = filename + time + ".jpg";
-		imagePath = "Screenshots" + "/" + destFile;
-		try {
-			// Copy paste file at destination folder location
-			FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		String time = dateFormat.format(new Date());
+//		destFile = filename + time + ".jpg";
+//		imagePath = "Screenshots" + "/" + destFile;
+//		try {
+//			// Copy paste file at destination folder location
+//			FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	public static void addScreenshottoReport(String linkName) {
-		Reporter.log("<a href= '../" + imagePath + "'<img src='../" + imagePath
+//		Reporter.log("<a href= '../" + imagePath + "'<img src='../" + imagePath
+//				+ "' hight='100' width='100'/>" + linkName + " </a>");
+		Reporter.log("<a href='data:image/png;base64,"+screenShotBase64+"'" + "'<img src='" + screenShotBase64
 				+ "' hight='100' width='100'/>" + linkName + " </a>");
 	}
 }
