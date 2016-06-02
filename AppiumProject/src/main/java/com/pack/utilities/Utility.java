@@ -67,9 +67,9 @@ public class Utility {
 		// Set android platformName desired capability. It's Android in our case
 		// here.
 		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("app", app.getAbsolutePath());
-		capabilities.setCapability("noReset", true);
-		capabilities.setCapability("fullReset", false);
+		//capabilities.setCapability("app", app.getAbsolutePath());
+		// capabilities.setCapability("noReset", true);
+		// capabilities.setCapability("fullReset", false);
 
 		// Set android appPackage desired capability. It is
 		// com.bt.bms for BookMyShow application.
