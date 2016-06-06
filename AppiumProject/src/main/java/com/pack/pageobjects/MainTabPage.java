@@ -1,10 +1,11 @@
 package com.pack.pageobjects;
 
-import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.By;
 
 import com.pack.utilities.Utility;
+
 
 public class MainTabPage extends Utility {
 	public final static By showcaseTabXpath = By
@@ -19,10 +20,10 @@ public class MainTabPage extends Utility {
 //			.id("com.bt.bms:id/iBtnCloseDialog");
 	
 	public static void verifyMainTabs(String str) {
-		assertEquals(driver.findElement(showcaseTabXpath).getText(), "SHOWCASE");
-		assertEquals(driver.findElement(ticketsTabXpath).getText(), "TICKETS");
-		assertEquals(driver.findElement(youTabXpath).getText(), "YOU");
-		assertEquals(driver.findElement(discoverTabXpath).getText(), "DISCOVER");
+		assertTrue(driver.findElement(showcaseTabXpath).isDisplayed());
+		assertTrue(driver.findElement(ticketsTabXpath).isDisplayed());
+		assertTrue(driver.findElement(youTabXpath).isDisplayed());
+		assertTrue(driver.findElement(discoverTabXpath).isDisplayed());
 		takeScreenShot(str);
 		addScreenshottoReport("DashboardPage");
 	}

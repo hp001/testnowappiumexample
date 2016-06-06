@@ -33,13 +33,11 @@ public class TicketsPage extends Utility{
 //			
 //		}
 		elements = driver.findElements(By.className("android.widget.TextView"));
-		assertEquals(driver.findElement(allMenuXpath).getText(), "ALL");
-		assertEquals(elements.get(6).getText(), "MOVIES");
-		assertEquals(driver.findElement(eventsMenuXpath).getText(), "EVENTS");
-		assertEquals(driver.findElement(playsMenuXpath).getText(), "PLAYS");
-		assertEquals(driver.findElement(sportsMenuXpath).getText(), "SPORTS");
-		assertEquals(elements.get(11).getText(), "EXPERIENCES");
-		assertEquals(driver.findElement(searchByVenueTextXpath).getText(), "Search by Venue");
+		assertTrue(driver.findElement(allMenuXpath).isDisplayed());
+		assertTrue(driver.findElement(eventsMenuXpath).isDisplayed());
+		assertTrue(driver.findElement(playsMenuXpath).isDisplayed());
+		assertTrue(driver.findElement(sportsMenuXpath).isDisplayed());
+		assertTrue(driver.findElement(searchByVenueTextXpath).isDisplayed());
 		assertTrue(driver.findElement(locationTextId).isDisplayed());
 		takeScreenShot(str);
 		addScreenshottoReport("TicketPage");
