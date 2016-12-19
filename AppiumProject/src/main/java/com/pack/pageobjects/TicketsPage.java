@@ -12,7 +12,7 @@ import com.pack.utilities.Utility;
 
 public class TicketsPage extends Utility{
 	public final static By allMenuXpath = By.xpath("//android.widget.TextView[@text='ALL']");
-//	private final static By moviesMenuId = By.id("com.bt.bms:id/menu_image_dyn");
+	private final static By moviesMenuId = By.id("com.bt.bms:id/menu_image_dyn");
 	private final static By eventsMenuXpath = By.xpath("//android.widget.TextView[@text='EVENTS']");
 	private final static By playsMenuXpath = By.xpath("//android.widget.TextView[@text='PLAYS']");
 	private final static By sportsMenuXpath = By.xpath("//android.widget.TextView[@text='SPORTS']");
@@ -44,7 +44,7 @@ public class TicketsPage extends Utility{
 	}
 	
 	public static void clickMoviesMenu(){
-		clickOnElement(elements.get(6));
+		clickOnElement(moviesMenuId);
 		waitForElement(MoviesPage.moviesTitleId);
 	}
 	

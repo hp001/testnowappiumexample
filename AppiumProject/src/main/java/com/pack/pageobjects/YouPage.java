@@ -48,8 +48,8 @@ public class YouPage extends Utility {
 				FIRSTNAME.toUpperCase()+" "+ LASTNAME.toUpperCase());
 		assertEquals(driver.findElement(myWalletTextId).getText(),
 				"MyWallet new");
-		assertEquals(driver.findElement(referMyFriendTextId).getText(),
-				"ReferMyFriend new");
+//		assertEquals(driver.findElement(referMyFriendTextId).getText(),
+//				"ReferMyFriend new");
 		assertEquals(driver.findElement(favVenueTextId).getText(),
 				"Favorite Venues");
 		takeScreenShot(str);
